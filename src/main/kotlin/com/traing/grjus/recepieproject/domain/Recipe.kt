@@ -14,12 +14,19 @@ data class Recipe(
     var source:String,
     var url:String,
     var directions:String,
-    @Enumerated(value=EnumType.STRING)
+    @Enumerated(value=EnumType.ORDINAL)
     var difficulty:Difficulty,
     @Lob
     var image:ByteArray,
     @OneToOne(cascade = [CascadeType.ALL])
     var notes:Note,
     @OneToMany(cascade = [CascadeType.ALL], mappedBy = "recipe")
-    var ingredient:Set<Ingredient>
+    var ingredient:Set<Ingredient>,
+
+    @ManyToMany
+    @JoinTable(name="recipe_category",
+        joinColumns = [JoinColumn(name="recipe_id")],
+        inverseJoinColumns = [JoinColumn(name="category_id")]
+        )
+    var categories:Set<Category>
 )

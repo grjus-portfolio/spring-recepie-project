@@ -3,6 +3,7 @@ package com.traing.grjus.recepieproject.domain
 import java.math.BigDecimal
 import javax.persistence.*
 
+@Entity
 data class Ingredient(
     @Id
     @GeneratedValue

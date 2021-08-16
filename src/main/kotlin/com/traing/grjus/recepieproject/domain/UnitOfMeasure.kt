@@ -1,10 +1,8 @@
 package com.traing.grjus.recepieproject.domain
 
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.OneToOne
+import javax.persistence.*
 
+@Entity
 data class UnitOfMeasure(
 
     @Id
@@ -12,5 +10,7 @@ data class UnitOfMeasure(
     var id:Long,
 
     @OneToOne
-    var uom:String) {
+    var ingredient: Ingredient
+
+    ) {
 }
