@@ -7,10 +7,11 @@ data class UnitOfMeasure(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id:Long,
+    val id:Long,
 
     @OneToOne
-    var ingredient: Ingredient
+    val ingredient: Ingredient,
 
+    val description:String
     ) {
 }

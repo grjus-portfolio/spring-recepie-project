@@ -5,5 +5,6 @@ import org.springframework.data.repository.CrudRepository
 
 
 interface UnitOfMeasureRepository :CrudRepository<UnitOfMeasure, Long>{
+    fun findByDescription(description:String): UnitOfMeasure?
 
 }
